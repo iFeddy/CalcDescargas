@@ -1,27 +1,15 @@
 // Dom7
 var $$ = Dom7;
 
+// Plugins
+Framework7.use(Framework7Keypad);
+
 // Framework7 App main instance
 var app  = new Framework7({
   root: '#app', // App root element
-  id: 'io.framework7.testapp', // App bundle ID
-  name: 'Framework7', // App name
-  theme: 'auto', // Automatic theme detection
-  // App root data
-  data: function () {
-    return {
-      user: {
-        firstName: 'John',
-        lastName: 'Doe',
-      },
-    };
-  },
-  // App root methods
-  methods: {
-    helloWorld: function () {
-      app.dialog.alert('Hello World!');
-    },
-  },
+  id: 'com.latirus.calcdescargas', // App bundle ID
+  name: 'Calcular Descargas', // App name
+  theme: 'md', // Automatic theme detection
   // App routes
   routes: routes,
 });

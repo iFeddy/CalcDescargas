@@ -1,1 +1,45 @@
 /* Your app styles here */
+
+.md .page {
+    background: radial-gradient(at top left, rgb(170, 185, 127) 0%, rgb(138, 105, 66) 31%, rgb(160, 61, 33) 64%, rgb(70, 26, 9) 100%) !important;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(30,30,30);
+}
+
+.md .navbar{
+    background-color: #ff6e3d !important;
+}
+
+.md .block {
+    padding: 0 25px !important;
+}
+
+.md .toolbar-inner {
+    overflow: hidden;
+    background-color: #6d1f04;
+}
+
+input{
+    border-radius: 5px;
+    padding:15px;
+    font-size: medium;
+    color: #606060;
+    width: 100%;
+    box-sizing : border-box;
+}
+
+.redondito{
+    color: white !important;
+    background: #862f11;
+    padding: 10px !important;
+    width: 80px;
+    height: 80px !important;
+    border-radius: 50% !important;
+    margin: 25px auto;
+    line-height: 60px !important;
+    border: 2px solid #ef9273 !important;
+}
+
+.redondito .selected{
+    background-color: #31170e !important;
+}
