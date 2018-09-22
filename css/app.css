@@ -1,13 +1,13 @@
 /* Your app styles here */
 
 .md .page {
-    background: radial-gradient(at top left, rgb(170, 185, 127) 0%, rgb(138, 105, 66) 31%, rgb(160, 61, 33) 64%, rgb(70, 26, 9) 100%) !important;
+    background: radial-gradient(at top left, rgb(76, 76, 93) 0%, rgb(52, 52, 60) 31%, rgba(25, 25, 30, 1) 64%, rgb(0, 0, 0) 100%) !important;
     color: white;
     text-shadow: 1px 1px 1px rgb(30,30,30);
 }
 
 .md .navbar{
-    background-color: #ff6e3d !important;
+    background-color: #252530 !important;
 }
 
 .md .block {
@@ -16,13 +16,13 @@
 
 .md .toolbar-inner {
     overflow: hidden;
-    background-color: #6d1f04;
+    background-color: #252530;
 }
 
 input{
     border-radius: 5px;
     padding:15px;
-    font-size: medium;
+    font-size: 15px;
     color: #606060;
     width: 100%;
     box-sizing : border-box;
@@ -30,16 +30,64 @@ input{
 
 .redondito{
     color: white !important;
-    background: #862f11;
+    background: #131315;
     padding: 10px !important;
     width: 80px;
     height: 80px !important;
     border-radius: 50% !important;
     margin: 25px auto;
     line-height: 60px !important;
-    border: 2px solid #ef9273 !important;
+    border: 2px solid #676179 !important;
+    transition: all 0.5s;
 }
 
-.redondito .selected{
-    background-color: #31170e !important;
+.red{
+    background-color: firebrick !important;
+    font-size: medium !important;
+    font-weight: 600 !important;
+    color: #f1d2d2 !important;
+    border: 1px solid #d08080 !important;
+}
+
+.selected{
+    background-color: #1473e6 !important;
+    border: 2px solid #77a1d4 !important;
+}
+
+.calcRegistro{
+    padding: 10px 20px 10px 55px;
+    font-size: smaller;
+    width: fit-content;
+    margin: 5px auto 15px auto;
+    border: 1px solid #77a1d4;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    background-color: #1473e6;
+    height: 20px;
+    transition: all 1s;
+}
+
+#panelMySpeed{
+    display:none;
+    transition: all 1s linear;
+}
+
+#progressButton{
+    background-color: rgba(0,0,0,0.1);
+    position: absolute;
+    left: 0;
+    width: 45px;
+    height: 40px;
+    line-height: 40px;
+    top: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid #1a61b7;
+}
+
+#doMaths{
+    margin: 0 auto;
+    width: 50%;
+    height: 45px !important;
 }

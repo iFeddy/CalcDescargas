@@ -35,13 +35,19 @@
         <!-- Scrollable page content-->
         <div class="page-content">
           <div class="block">
-            <p>Calcula el tiempo que te tardaría <strong>descargar</strong> un archivo segun su tamaño</p>
-            <input type="numpad" placeholder="Tamaño de Archivo">
+            <p>Calcula el tiempo que te tardaría <strong>descargar</strong> un archivo según su tamaño</p>
+            <input id="fileSize" type="numpad" placeholder="Tamaño de Archivo">
             <div class="row">
-                <div class="col-33"><div class="button redondito">GB</div></div>
-                <div class="col-33"><div class="button redondito">MB</div></div>
-                <div class="col-33"><div class="button redondito">KB</div></div>
+                <div class="col-33"><div class="button redondito" id="fileGB">GB</div></div>
+                <div class="col-33"><div class="button redondito selected" id="fileMB">MB</div></div>
+                <div class="col-33"><div class="button redondito" id="fileKB">KB</div></div>
             </div>
+            <div class="calcRegistro"><i class="f7-icons" id="progressButton">arrow_down_fill</i>&nbsp;<span id="speedtest">Calculando Aproximación de tu Velocidad...</span></div>
+
+            <button class="col button button-fill color-green" id="doMaths">Calcular</button>
+            <br/>
+            <div class="calcRegistro red" id="panelMySpeed"><i class="f7-icons" id="progressButton">timer_fill</i>&nbsp;<span id="mySpeed">00:00:00</span></div>
+         
           </div>
         </div>
       </div>
