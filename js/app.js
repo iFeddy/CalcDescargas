@@ -45,7 +45,11 @@ var myKeypad = app.keypad.create({
 
 $$('#doMaths').on('click', function (e){
   selectedSize = $$('#fileSize').val();
-  calcularVelocidad(selectedSize);
+  if(selectedSize == ""){
+    app.dialog.alert("Ingresa el Tamaño del Archivo para Analizar");
+  }else{
+      calcularVelocidad(selectedSize);
+  }
 });
 
 $$('#fileGB').on('click', function (e) {
