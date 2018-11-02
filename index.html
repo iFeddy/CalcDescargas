@@ -49,7 +49,102 @@
             
             <center><div class="preloader color-multi"><span class="preloader-inner"><span class="preloader-inner-gap"></span><span class="preloader-inner-left"><span class="preloader-inner-half-circle"></span></span>  <span class="preloader-inner-right">      <span class="preloader-inner-half-circle"></span>  </span></span></div></center>
             <div class="calcRegistro red" id="panelMySpeed"><i class="f7-icons" id="progressButton">timer_fill</i>&nbsp;<span id="mySpeed">00:00:00</span></div>
-         
+            <div class="speedo">
+              <div class="face">
+                <div class="needle"></div>
+              </div>
+            </div>
+            
+            <h4>Choose your speed...</h4>
+            
+            <form>
+              <input class="speed" name="speed" type="radio" value="slow"> Slow<br>
+              <input class="speed" name="speed" type="radio" value="medium"> Medium<br>
+              <input class="speed" name="speed" type="radio" value="fast"> Fast
+            </form>
+
+            <style>h4 {
+                color: #222;
+                text-align: center;
+                margin-bottom: 30px;
+              }
+              
+              form {
+                text-align: center;
+              }
+              
+              .speedo {
+                width: 200px;
+                height: 90px;
+                margin: 100px auto 30px auto;
+                overflow: hidden;
+              }
+              
+              .face {
+                width: 200px;
+                height: 200px;
+                border: solid 40px #a3e0ae;
+                border-radius: 50%;
+                position: relative;
+              }
+              
+              .needle {
+                width: 5px;
+                height: 80px;
+                background: #333;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                display: inline-block;
+                left: 55px;
+                position: absolute;
+                top: -33px;
+                transform-origin: bottom;
+              }
+              
+              .slow {
+                -webkit-animation: slow 2s;
+                transform: rotate(-50deg);
+              }
+              
+              .medium {
+                -webkit-animation: medium 2s;
+                transform: rotate(0deg);
+              }
+              
+              .fast {
+                -webkit-animation: fast 2s;
+                transform: rotate(50deg);
+              }
+              
+              @-webkit-keyframes slow {
+                0% {
+                  transform: rotate(-90deg);
+                }
+                100% {
+                  transform: rotate(-50deg);
+                }
+              }
+              
+              @-webkit-keyframes medium {
+                0% {
+                  transform: rotate(-90deg);
+                }
+                100% {
+                  transform: rotate(0deg);
+                }
+              }
+              
+              @-webkit-keyframes fast {
+                0% {
+                  transform: rotate(-90deg);
+                }
+                100% {
+                  transform: rotate(50deg);
+                }
+              }
+              </style>
           </div>
         </div>
       </div>

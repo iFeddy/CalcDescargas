@@ -124,3 +124,19 @@ function MeasureConnectionSpeed() {
     $$('#speedtest').html("Tu Velocidad es de <strong>" + speedMbps + "</strong> Mbp/s");
   }
 }
+
+$$(".speed").click(function() {
+	if ($$(".speed:checked").val() == "slow") {
+		$$(".needle").addClass("slow");
+		$$(".needle").removeClass("medium");
+		$$(".needle").removeClass("fast");
+	} else if ($$(".speed:checked").val() == "medium") {
+		$$(".needle").addClass("medium");
+		$$(".needle").removeClass("slow");
+		$$(".needle").removeClass("fast");
+	} else if ($$(".speed:checked").val() == "fast") {
+		$$(".needle").addClass("fast");
+		$$(".needle").removeClass("medium");
+		$$(".needle").removeClass("slow");
+	}
+});
