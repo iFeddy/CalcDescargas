@@ -43,12 +43,12 @@ var myKeypad = app.keypad.create({
 });
 */
 
-$$('#doMaths').on('click', function (e){
+$$('#doMaths').on('click', function (e) {
   selectedSize = $$('#fileSize').val();
-  if(selectedSize == ""){
+  if (selectedSize == "") {
     app.dialog.alert("Ingresa el Tamaño del Archivo para Analizar");
-  }else{
-      calcularVelocidad(selectedSize);
+  } else {
+    calcularVelocidad(selectedSize);
   }
 });
 
@@ -77,21 +77,32 @@ $$('#fileKB').on('click', function (e) {
 });
 
 //Aca pasa todo
-function calcularVelocidad(size){
+function calcularVelocidad(size) {
   console.log("Calculando Tamaño: " + size + " " + selectedType);
-  if(selectedType == "GB"){
-    size = Math.round(size * 1024.44444444); //MB
-    size = Math.round(size * 1024.44444444); //KB
-  }else if(selectedType == "MB"){
-    size = Math.round(size * 1024.44444444); //KB
+  $$("#resultado").show();
+  if (speedKbps == undefined) {
+    setTimeout(function () {
+      calcularVelocidad(size);
+      return;
+    }, 3000);
+  } else {
+    setTimeout(function () {
+      if (selectedType == "GB") {
+        size = Math.round(size * 1024.44444444); //MB
+        size = Math.round(size * 1024.44444444); //KB
+      } else if (selectedType == "MB") {
+        size = Math.round(size * 1024.44444444); //KB
+      }
+      //console.log(size + " KB");
+      var bit = Math.round(speedKbps / 8);
+      //console.log(bit);
+      var segundos = size / bit;
+      var tiempo = new Date(segundos * 1000).toISOString().substr(11, 8);
+      app.dialog.alert("Aproximadamente " + tiempo);
+      $$("#resultado").hide();
+    }, 1500);
   }
-  //console.log(size + " KB");
-  var bit = Math.round(speedKbps / 8);
-  //console.log(bit);
-  var segundos = size / bit;
-  var tiempo = new Date(segundos * 1000).toISOString().substr(11, 8);
-  $$("#panelMySpeed").show();
-  $$("#mySpeed").text(tiempo);
+
 }
 
 
@@ -124,19 +135,3 @@ function MeasureConnectionSpeed() {
     $$('#speedtest').html("Tu Velocidad es de <strong>" + speedMbps + "</strong> Mbp/s");
   }
 }
-
-$$(".speed").click(function() {
-	if ($$(".speed:checked").val() == "slow") {
-		$$(".needle").addClass("slow");
-		$$(".needle").removeClass("medium");
-		$$(".needle").removeClass("fast");
-	} else if ($$(".speed:checked").val() == "medium") {
-		$$(".needle").addClass("medium");
-		$$(".needle").removeClass("slow");
-		$$(".needle").removeClass("fast");
-	} else if ($$(".speed:checked").val() == "fast") {
-		$$(".needle").addClass("fast");
-		$$(".needle").removeClass("medium");
-		$$(".needle").removeClass("slow");
-	}
-});

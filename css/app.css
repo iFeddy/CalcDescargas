@@ -91,3 +91,7 @@ input{
     width: 50%;
     height: 45px !important;
 }
+
+#resultado{
+    display:none;
+}
